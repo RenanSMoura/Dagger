@@ -1,6 +1,8 @@
 package truckpad.com.advancedandroid.base
 
 import android.app.Application
+import timber.log.Timber
+import truckpad.com.advancedandroid.BuildConfig
 import truckpad.com.advancedandroid.di.inject.ActivityInjector
 import javax.inject.Inject
 
@@ -16,6 +18,10 @@ class MainApplication : Application() {
                 .applicationModule(ApplicationModule(this))
                 .build()
         component.inject(this)
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
     }
 
 

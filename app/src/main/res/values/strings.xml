@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AdvancedAndroid</string>
+    <string name="api_error">Error Loading repos</string>
 </resources>
