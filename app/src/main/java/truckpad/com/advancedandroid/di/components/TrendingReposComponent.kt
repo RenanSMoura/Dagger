@@ -3,7 +3,7 @@ package truckpad.com.advancedandroid.di.components
 import dagger.Subcomponent
 import dagger.android.AndroidInjector
 import truckpad.com.advancedandroid.di.scope.ScreenScope
-import truckpad.com.advancedandroid.home.trending.TrendingReposController
+import truckpad.com.advancedandroid.trending.TrendingReposController
 
 
 @ScreenScope

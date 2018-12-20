@@ -5,8 +5,6 @@ import truckpad.com.advancedandroid.di.inject.ActivityInjector
 import javax.inject.Inject
 
 class MainApplication : Application() {
-
-
     @Inject lateinit var activityInjector : ActivityInjector
     private lateinit var  component : ApplicationComponent
 

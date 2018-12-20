@@ -1,4 +1,4 @@
-package truckpad.com.advancedandroid.home.trending
+package truckpad.com.advancedandroid.trending
 
 import android.view.LayoutInflater
 import android.view.View

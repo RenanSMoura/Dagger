@@ -13,11 +13,11 @@ import javax.inject.Provider
 
 @ActivityScope
 class ScreenInjector @Inject
- constructor(private val screenInjectors: Map<Class<out Controller>,  @JvmSuppressWildcards Provider<AndroidInjector.Factory<out Controller>>>) {
+constructor(private val screenInjectors: Map<Class<out Controller>, @JvmSuppressWildcards Provider<AndroidInjector.Factory<out Controller>>>) {
     private val cache = HashMap<String?, AndroidInjector<Controller>>()
 
 
-     fun inject(controller: Controller) {
+    fun inject(controller: Controller) {
         if (controller !is BaseController) {
             throw IllegalArgumentException("Controller must extend BaseController")
         }
@@ -32,14 +32,15 @@ class ScreenInjector @Inject
         val injectorFactory = screenInjectors[controller.javaClass]?.get() as AndroidInjector.Factory<Controller>
         val injector = injectorFactory.create(controller)
         cache[instanceId] = injector
+        injector.inject(controller)
     }
 
-     fun clear(controller: Controller) {
+    fun clear(controller: Controller) {
         cache.remove(controller.instanceId)
     }
 
     companion object {
-        fun get(activity : Activity) : ScreenInjector {
+        fun get(activity: Activity): ScreenInjector {
             return (activity as BaseActivity).screenInjector
         }
     }

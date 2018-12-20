@@ -7,7 +7,7 @@ import dagger.android.AndroidInjector
 import dagger.multibindings.IntoMap
 import truckpad.com.advancedandroid.di.ControllerKey
 import truckpad.com.advancedandroid.di.components.TrendingReposComponent
-import truckpad.com.advancedandroid.home.trending.TrendingReposController
+import truckpad.com.advancedandroid.trending.TrendingReposController
 
 
 @Module(subcomponents = [TrendingReposComponent::class])
